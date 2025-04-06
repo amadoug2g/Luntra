@@ -1,6 +1,6 @@
 //
 //  AudioService.swift
-//  LuntraMVP
+//  Luntra
 //
 //  Created by Amadou on 05.04.2025.
 //
@@ -11,8 +11,6 @@ protocol AudioService {
     // MARK: File Management
     func addFile(_ url: URL)
     func updateTranscript(for file: AudioFile, transcript: String)
-    //func renameFile(file: AudioFile, to newName: String)
-    //func deleteFile(at offsets: IndexSet)
     
     // MARK: Playback Controls
     func initialize(url: URL)

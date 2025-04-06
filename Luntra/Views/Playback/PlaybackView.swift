@@ -1,6 +1,6 @@
 //
 //  PlaybackView.swift
-//  LuntraMVP
+//  Luntra
 //
 //  Created by Amadou on 04.04.2025.
 //
@@ -9,8 +9,6 @@ import SwiftUI
 import AVFoundation
 
 struct PlaybackView: View {
-    @FetchRequest(sortDescriptors: []) var audioFileEntity: FetchedResults<AudioFileEntity>
-    @Environment(\.managedObjectContext) var moc
     @ObservedObject var audioService: AudioServiceImpl
     var file: AudioFile
     
@@ -39,11 +37,10 @@ struct PlaybackView: View {
                 if tabSelection == 0 {
                     AlbumTabView()
                 } else {
-                    TranscriptTabView(audioService: audioService, file: file)
-                        .environment(\.managedObjectContext, moc)
+                    Text("Transcription TBI")
                 }
             }
-            .frame(height: 500) // Fixed height for consistent layout
+            .frame(height: 500)
             
             ZStack {
                 Color.white.opacity(0.15)
@@ -57,17 +54,6 @@ struct PlaybackView: View {
             }
         }
         .navigationTitle("Playback")
-        //.toolbar {
-         //   ToolbarItem(placement: .topBarTrailing) {
-         //       Button {
-         //           selectedFile = file
-         //           newName = file.name
-         //           isRenaming = true
-         //       } label: {
-         //           Text("Edit")
-          //      }
-         //   }
-        //}
         .onAppear() {
             audioService.initialize(url: file.url)
 

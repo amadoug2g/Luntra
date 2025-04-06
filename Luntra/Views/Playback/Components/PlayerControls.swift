@@ -1,6 +1,6 @@
 //
 //  PlayerControls.swift
-//  LuntraMVP
+//  Luntra
 //
 //  Created by Amadou on 05.04.2025.
 //

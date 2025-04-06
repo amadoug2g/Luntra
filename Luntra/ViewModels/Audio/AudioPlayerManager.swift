@@ -1,6 +1,6 @@
 //
 //  AudioManager.swift
-//  LuntraMVP
+//  Luntra
 //
 //  Created by Amadou on 02.04.2025.
 //
@@ -77,7 +77,7 @@ class AudioPlayerManager: NSObject, ObservableObject {
     }
     
     private func startTimer() {
-        stopTimer()  // Ensure there's no existing timer.
+        stopTimer()
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             guard let self = self, let player = self.audioPlayer else { return }
             self.currentTime = player.currentTime

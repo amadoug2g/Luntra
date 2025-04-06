@@ -1,6 +1,6 @@
 //
 //  AudioFileListView.swift
-//  LuntraMVP
+//  Luntra
 //
 //  Created by Amadou on 05.04.2025.
 //
@@ -10,14 +10,13 @@ import AVFoundation
 import UniformTypeIdentifiers
 
 struct AudioFileListView: View {
-    @Environment(\.managedObjectContext) var moc
+    @Environment(\.modelContext) var context
     @ObservedObject var audioService: AudioServiceImpl
 
     var body: some View {
         List {
             ForEach(audioService.audioFiles) { file in
                 NavigationLink(destination: PlaybackView(audioService: audioService, file: file)
-                    .environment(\.managedObjectContext, moc)
                 ) {
                     Text(file.name)
                 }

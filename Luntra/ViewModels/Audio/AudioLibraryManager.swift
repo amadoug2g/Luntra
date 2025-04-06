@@ -1,6 +1,6 @@
 //
 //  AudioLibrary.swift
-//  LuntraMVP
+//  Luntra
 //
 //  Created by Amadou on 04.04.2025.
 //
